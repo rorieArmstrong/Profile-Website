@@ -1,3 +1,10 @@
+:root {--dark-contrast:#272643;
+--white-colour:#ffffff;
+--light-colour:#e3f6f5;
+--mid-colour:#bae8e8;
+--dark-colour:#2c698d;
+}
+
 .App {
   text-align: center;
 }
