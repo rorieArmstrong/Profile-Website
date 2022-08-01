@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle, Paragraph, Pill } from '../../styles';
-import { ProfileLink } from './styles';
+import { ArrowRight32 } from '@carbon/icons-react';
+import { ProfileLink, ViewResumeLink  } from './styles';
 
 const Me = ({ user }) => {
   return (
@@ -17,6 +18,16 @@ const Me = ({ user }) => {
             <Pill key={skill.name}>{skill.name}</Pill>
           ))}
         </div>
+      </div>
+      <div>
+        <ViewResumeLink
+          href={`https://gitconnected.com/${user.basics.username}/resume`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>View Résumé</span>
+          <ArrowRight32 />
+        </ViewResumeLink>
       </div>
       <div>
         <SectionTitle>Profiles</SectionTitle>

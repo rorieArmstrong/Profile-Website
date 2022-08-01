@@ -6,9 +6,9 @@ import { StyledSideNav } from './styles';
 
 const items = [
   { name: 'Me', path: '/' },
-  { name: 'Projects', path: '/projects' },
   { name: 'Work', path: '/work' },
   { name: 'Education', path: '/education' },
+  { name: 'Projects', path: '/projects' },
 ];
 
 const Sidebar = () => {
@@ -26,7 +26,7 @@ const Sidebar = () => {
             to={i.path}
             key={i.name}
           >
-            {i.name}
+            <h4>{i.name}</h4>
           </SideNavLink>
         ))}
       </SideNavItems>

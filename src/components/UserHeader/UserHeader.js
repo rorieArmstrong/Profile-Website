@@ -1,8 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { ArrowRight32 } from '@carbon/icons-react';
 
-import { HeaderContainer, Header, Image, ViewResumeLink } from './styles';
+import { HeaderContainer, Header, Image } from './styles';
 
 const UserHeader = ({ user }) => {
   const location = useLocation();
@@ -34,16 +33,6 @@ const UserHeader = ({ user }) => {
           </p>
         </div>
       </Header>
-      <div>
-        <ViewResumeLink
-          href={`https://gitconnected.com/${user.basics.username}/resume`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>View Résumé</span>
-          <ArrowRight32 />
-        </ViewResumeLink>
-      </div>
     </HeaderContainer>
   );
 };

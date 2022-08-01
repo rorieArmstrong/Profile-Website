@@ -16,14 +16,6 @@ const MobileNav = () => {
             tooltipPosition="bottom"
           />
         </NavLink>
-        <NavLink to="/projects">
-          <NavButton
-            hasIconOnly
-            renderIcon={Code32}
-            iconDescription="Projects"
-            tooltipPosition="bottom"
-          />
-        </NavLink>
         <NavLink to="/work">
           <NavButton
             hasIconOnly
@@ -37,6 +29,14 @@ const MobileNav = () => {
             hasIconOnly
             renderIcon={Education32}
             iconDescription="Education"
+            tooltipPosition="bottom"
+          />
+        </NavLink>
+        <NavLink to="/projects">
+          <NavButton
+            hasIconOnly
+            renderIcon={Code32}
+            iconDescription="Projects"
             tooltipPosition="bottom"
           />
         </NavLink>
