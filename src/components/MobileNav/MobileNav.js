@@ -1,5 +1,5 @@
 import React from 'react'
-import { User, Code, Portfolio, Education } from '@carbon/icons-react'
+import { User32, Code32, Portfolio32, Education32 } from '@carbon/icons-react'
 
 import { Container, Spacer, NavWrapper, NavButton, NavLink } from './styles'
 
@@ -11,7 +11,7 @@ const MobileNav = () => {
         <NavLink to="/">
           <NavButton
             hasIconOnly
-            renderIcon={User}
+            renderIcon={User32}
             iconDescription="Me"
             tooltipPosition="bottom"
           />
@@ -19,7 +19,7 @@ const MobileNav = () => {
         <NavLink to="/projects">
           <NavButton
             hasIconOnly
-            renderIcon={Code}
+            renderIcon={Code32}
             iconDescription="Projects"
             tooltipPosition="bottom"
           />
@@ -27,7 +27,7 @@ const MobileNav = () => {
         <NavLink to="/work">
           <NavButton
             hasIconOnly
-            renderIcon={Portfolio}
+            renderIcon={Portfolio32}
             iconDescription="Work"
             tooltipPosition="bottom"
           />
@@ -35,7 +35,7 @@ const MobileNav = () => {
         <NavLink to="/education">
           <NavButton
             hasIconOnly
-            renderIcon={Education}
+            renderIcon={Education32}
             iconDescription="Education"
             tooltipPosition="bottom"
           />

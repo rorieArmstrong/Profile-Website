@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { ArrowRight } from '@carbon/icons-react';
+import { ArrowRight32 } from '@carbon/icons-react';
 
 import { HeaderContainer, Header, Image, ViewResumeLink } from './styles';
 
@@ -41,7 +41,7 @@ const UserHeader = ({ user }) => {
           rel="noopener noreferrer"
         >
           <span>View Résumé</span>
-          <ArrowRight />
+          <ArrowRight32 />
         </ViewResumeLink>
       </div>
     </HeaderContainer>
