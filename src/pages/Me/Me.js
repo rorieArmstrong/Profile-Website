@@ -32,7 +32,7 @@ const Me = ({ user }) => {
       <div>
         <SectionTitle>Profiles</SectionTitle>
         <ul>
-          {user.basics.profiles.map((profile, i) => (
+          {user.basics.profiles.slice(1).map((profile, i) => (
             <ProfileLink key={profile.network}>
               {i !== 0 && ' | '}
               <a href={profile.url} target="_blank" rel="noreferrer noopener">
