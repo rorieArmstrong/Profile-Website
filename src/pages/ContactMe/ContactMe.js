@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle } from '../../styles';
-import { TextInput, TextArea, Label } from './styles';
+import { TextInput, TextArea, Label, SubmitButton } from './styles';
 
 const ContactMe = ({ user }) => {
   const [name,  onNameChange] = useState('')
@@ -36,9 +36,9 @@ const ContactMe = ({ user }) => {
 
   return (
     <Layout user={user}>
-      <div>
+      <div >
         <SectionTitle>Contact Me</SectionTitle>
-        <form id="contact-form" onSubmit={event => handleSubmit(event)} method="POST">
+        <form id="contact-form" onSubmit={event => handleSubmit(event)} method="POST" style={{width:'50%', minWidth: '250px'}}>
           <div className="form-group">
             <Label htmlFor="name">Name</Label>
             <TextInput type="text" className="form-control" id="name" value={name} onChange={event => onNameChange(event.target.value)} />
@@ -51,7 +51,7 @@ const ContactMe = ({ user }) => {
             <Label htmlFor="message">Message</Label>
             <TextArea className="form-control" rows="5" id="message" value={message} onChange={event => onMessageChange(event.target.value)} />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <SubmitButton type="submit" className="btn btn-primary"><span style={{margin: 'auto'}}>Submit</span></SubmitButton>
         </form>
       </div>
     </Layout>

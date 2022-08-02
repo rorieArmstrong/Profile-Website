@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SideNavItems, SideNavLink } from 'carbon-components-react/lib/components/UIShell';
-
 import { StyledSideNav } from './styles';
 
 const items = [
