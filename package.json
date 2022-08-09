@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": "false",
   "license": "MIT",
+  "homepage": "http://roriearmstrong.github.io/Profile-Website",
   "dependencies": {
     "@carbon/icons-react": "^10.44.0",
     "@carbon/themes": "^10.48.0",
@@ -23,7 +24,7 @@
     "web-vitals": "^2.1.2"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.2.0"
   },
   "scripts": {
     "backend": "node index.js",

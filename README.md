@@ -1,6 +1,55 @@
-# Getting Started with Create React App
+# Profile Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is to create a website as a basis for getting to now me, my experience and my skills.
+
+## Directory
+
+.gitignore
+LICENSE
+README.md
+index.js
+package-lock.json
+package.json
+public/favicon.ico
+public/index.html
+public/manifest.json
+public/robots.txt
+src/App.css
+src/App.js
+src/App.test.js
+src/components/Layout/Layout.js
+src/components/Layout/index.js
+src/components/Layout/styles.js
+src/components/MobileNav/MobileNav.js
+src/components/MobileNav/index.js
+src/components/MobileNav/styles.js
+src/components/SideBar/SideBar.js
+src/components/SideBar/index.js
+src/components/SideBar/styles.js
+src/components/UserHeader/UserHeader.js
+src/components/UserHeader/index.js
+src/components/UserHeader/styles.js
+src/index.js
+src/index.scss
+src/pages/ContactMe/ContactMe.js
+src/pages/ContactMe/index.js
+src/pages/ContactMe/styles.js
+src/pages/Education/Education.js
+src/pages/Education/index.js
+src/pages/Education/styles.js
+src/pages/Me/Me.js
+src/pages/Me/index.js
+src/pages/Me/styles.js
+src/pages/Projects/Projects.js
+src/pages/Projects/index.js
+src/pages/Projects/styles.js
+src/pages/Work/Work.js
+src/pages/Work/index.js
+src/pages/Work/styles.js
+src/pages/index.js
+src/reportWebVitals.js
+src/setupTests.js
+src/styles.js
 
 ## Available Scripts
 
@@ -39,32 +88,4 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
