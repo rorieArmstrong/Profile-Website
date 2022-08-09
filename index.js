@@ -49,8 +49,21 @@ router.post('/send', (req, res, next) => {
     } else {
       console.log('email sent')
       res.json({
-       status: 'success'
-      })
+        status: 'success'
+     })
+ 
+     transporter.sendMail({
+       from: "<your email address>",
+       to: email,
+       subject: "Thank you for reaching out!",
+       text: `Thank you for contacting me, I will be in touch!\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`
+     }, function(error, info){
+       if(error) {
+         console.log(error);
+       } else{
+         console.log('Message sent: ' + info.response);
+       }
+     });
     }
   })
 })
