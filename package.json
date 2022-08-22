@@ -24,10 +24,12 @@
     "web-vitals": "^2.1.2"
   },
   "devDependencies": {
+    "concurrently": "^7.3.0",
     "gh-pages": "^2.2.0"
   },
   "scripts": {
     "backend": "node index.js",
+    "dev": "concurrently --kill-others \"react-scripts start\" \"node index.js\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
