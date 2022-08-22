@@ -3,8 +3,10 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
 
-const creds =  require('./config');
-const config = require('./config');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const creds =  { USER: process.env.USER, PASS: process.env.PASS }
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 var transport = {
@@ -35,7 +37,7 @@ router.post('/send', (req, res, next) => {
 
   var mail = {
     from: name,
-    to: config.USER,  // Change to email address that you want to receive messages on
+    to: creds.USER,  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
   }
