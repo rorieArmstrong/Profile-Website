@@ -8,7 +8,7 @@ import ContactMe from './ContactMe';
 
 const Pages = ({ user }) => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route exact path="/" element={<Me user={user} />} />
         <Route path="/projects" element={<Projects user={user} />} />
