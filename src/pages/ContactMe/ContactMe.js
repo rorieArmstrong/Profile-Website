@@ -14,7 +14,7 @@ const ContactMe = ({ user }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch('http://localhost:3002/send', {
+    fetch((process.env.PORT || 'http://localhost:3002/') + 'send', {
         method: "POST",
         body: JSON.stringify({name: name, email: email, message: message}),
         headers: {
