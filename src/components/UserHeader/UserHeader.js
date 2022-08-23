@@ -9,12 +9,12 @@ const UserHeader = ({ user }) => {
   return (
     <HeaderContainer isHome={location.pathname === '/'}>
       <Header>
-        <Image src={user.basics.picture} />
+        <Image src={user.basics.picture} alt="Profile-Picture" style={{width: "200px", hieght: "200px"}} />
         <div>
           <h2>{user.basics.name}</h2>
           <h4>
             <a
-              href={`https://gitconnected.com/${user.basics.username}`}
+              href={`https://github.com/${user.basics.username}`}
               target="_blank"
               rel="noreferrer noopener"
             >

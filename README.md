@@ -57,12 +57,12 @@ In the project directory, you can run:
 
 ### `npm run dev`
 
-Runs the app in the development mode along side email api to send and recieve messages N.B. you will have to create a config.js file e.g.
+Runs the app in the development mode along side email api to send and recieve messages N.B. you will have to create a .env file e.g.
 
-module.exports = {
-    USER: 'email address',
-    PASS: 'email password'
-}.\
+
+USER = email address\
+PASS = email password\
+\\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
