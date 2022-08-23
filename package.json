@@ -30,7 +30,7 @@
   },
   "scripts": {
     "backend": "node index.js",
-    "startCon": "concurrently --kill-others \"react-scripts start\" \"node index.js\"",
+    "dev": "concurrently --kill-others \"react-scripts start\" \"node index.js\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
