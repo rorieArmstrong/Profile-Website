@@ -14,6 +14,7 @@ const MobileNav = () => {
             renderIcon={User32}
             iconDescription="Me"
             tooltipPosition="bottom"
+            alt="Navigate About Me"
           />
         </NavLink>
         <NavLink to="/work">
@@ -22,6 +23,7 @@ const MobileNav = () => {
             renderIcon={Portfolio32}
             iconDescription="Work"
             tooltipPosition="bottom"
+            alt="Navigate Work"
           />
         </NavLink>
         <NavLink to="/education">
@@ -30,6 +32,7 @@ const MobileNav = () => {
             renderIcon={Education32}
             iconDescription="Education"
             tooltipPosition="bottom"
+            alt="Navigate Education"
           />
         </NavLink>
         <NavLink to="/projects">
@@ -38,6 +41,7 @@ const MobileNav = () => {
             renderIcon={Code32}
             iconDescription="Projects"
             tooltipPosition="bottom"
+            alt="Navigate Projects"
           />
         </NavLink>
         <NavLink to="/contactMe">
@@ -46,6 +50,7 @@ const MobileNav = () => {
             renderIcon={Email32}
             iconDescription="Contact"
             tooltipPosition="bottom"
+            alt="Navigate Contact Me"
           />
         </NavLink>
       </NavWrapper>

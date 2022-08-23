@@ -19,6 +19,7 @@ export const Header = styled.div`
 export const Image = styled.img`
   object-fit: cover;
   width: 200px;
+  hieght: 200px;
   margin-right: 1rem;
   border-radius: 50%;
 `;
