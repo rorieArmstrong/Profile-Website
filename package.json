@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": "false",
   "license": "MIT",
-  "homepage": "http://roriearmstrong.github.io/Profile-Website",
+  "homepage": "https://rorie-armstrong.herokuapp.com/",
   "dependencies": {
     "@carbon/icons-react": "^10.44.0",
     "@carbon/themes": "^10.48.0",
