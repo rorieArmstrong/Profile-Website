@@ -15,7 +15,7 @@ const ContactMe = ({ user }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch((port) + 'send', {
+    fetch((port) + '/send', {
         method: "POST",
         body: JSON.stringify({name: name, email: email, message: message}),
         headers: {

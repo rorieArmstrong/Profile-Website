@@ -10,11 +10,11 @@ const Pages = ({ user }) => {
   return (
     <Router basename={process.env.PORT}>
       <Routes>
-        <Route exact path="/" element={<Me user={user} />} />
         <Route path="/projects" element={<Projects user={user} />} />
         <Route path="/work" element={<Work user={user} />} />
         <Route path="/education" element={<Education user={user} />} />
         <Route path="/contactMe" element={<ContactMe user={user} />} />
+        <Route path="/" element={<Me user={user} />} />
       </Routes>
     </Router>
   );
