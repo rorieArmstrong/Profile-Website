@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
+var path = require('path');
 
 const dotenv = require('dotenv');
+const port = process.env.PORT || 3002
 dotenv.config();
 
 const creds =  { USER: process.env.USER, PASS: process.env.PASS }
@@ -74,13 +76,13 @@ const app = express()
 if (process.env.NODE_ENV === "production"){
   app.use(express.static('build'))
   app.get('*', (req, res) => {
-    req.sendFile( __dirname , 'build', 'index.html')
+    req.sendFile(path.resolve( __dirname , 'build', 'index.html'))
   })
 }
 app.use(cors())
 app.use(express.json())
 app.use('/', router)
-app.listen(process.env.PORT || 3002, (err) =>{
+app.listen(port, (err) =>{
   if(err){console.log(err)}
-  console.log('Listening on port: ' + process.env.PORT || 3002)
+  console.log('Listening on port: ' + port)
 })
