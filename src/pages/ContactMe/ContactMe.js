@@ -7,7 +7,7 @@ const ContactMe = ({ user }) => {
   const [name,  onNameChange] = useState('')
   const [email, onEmailChange] = useState('')
   const [message, onMessageChange] = useState('')
-  const port = process.env.PORT || 3002
+  const port = process.env.NODE_ENV === "production"? process.env.PORT : 3002
   
   const resetForm = () => {
     this.setState({name: '', email: '', message: ''})
