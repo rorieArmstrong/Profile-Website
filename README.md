@@ -2,55 +2,6 @@
 
 This project is to create a website as a basis for getting to now me, my experience and my skills.
 
-
-
-.gitignore\
-LICENSE\
-README.md\
-index.js\
-package-lock.json\
-package.json\
-public/favicon.ico\
-public/index.html\
-public/manifest.json\
-public/robots.txt\
-src/App.css\
-src/App.js\
-src/App.test.js\
-src/components/Layout/Layout.js\
-src/components/Layout/index.js\
-src/components/Layout/styles.js\
-src/components/MobileNav/MobileNav.js\
-src/components/MobileNav/index.js\
-src/components/MobileNav/styles.js\
-src/components/SideBar/SideBar.js\
-src/components/SideBar/index.js\
-src/components/SideBar/styles.js\
-src/components/UserHeader/UserHeader.js\
-src/components/UserHeader/index.js\
-src/components/UserHeader/styles.js\
-src/index.js\
-src/index.scss\
-src/pages/ContactMe/ContactMe.js\
-src/pages/ContactMe/index.js\
-src/pages/ContactMe/styles.js\
-src/pages/Education/Education.js\
-src/pages/Education/index.js\
-src/pages/Education/styles.js\
-src/pages/Me/Me.js\
-src/pages/Me/index.js\
-src/pages/Me/styles.js\
-src/pages/Projects/Projects.js\
-src/pages/Projects/index.js\
-src/pages/Projects/styles.js\
-src/pages/Work/Work.js\
-src/pages/Work/index.js\
-src/pages/Work/styles.js\
-src/pages/index.js\
-src/reportWebVitals.js\
-src/setupTests.js\
-src/styles.js\
-
 ## Available Scripts
 
 In the project directory, you can run:
