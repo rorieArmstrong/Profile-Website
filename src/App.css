@@ -35,6 +35,17 @@
   color: #61dafb;
 }
 
+h2 {
+  font-size: 64px;
+  padding-bottom: 16px;
+}
+
+p {
+  color: #c9c9c9;
+  font-size: 24px;
+  padding-bottom: 8px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
