@@ -2,13 +2,12 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle, Paragraph, Pill } from '../../styles';
 import { ArrowRight32 } from '@carbon/icons-react';
-import { ProfileLink, ViewResumeLink  } from './styles';
+import { ProfileLink, Links  } from './styles';
 
 const Me = ({ user }) => {
   return (
     <Layout user={user}>
-      <div>
-        <ul>
+      <Links>
           {user.basics.profiles.slice(1).map((profile, i) => (
             <ProfileLink key={profile.network}>
               <a href={profile.url} target="_blank" rel="noreferrer noopener">
@@ -16,10 +15,7 @@ const Me = ({ user }) => {
               </a>
             </ProfileLink>
           ))}
-        </ul>
-      </div>
-      <div>
-      </div>
+      </Links>
     </Layout>
   );
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ProfileLink = styled.li`
-  margin-right: 0.5rem;
+  margin-right: 2.5rem;
   margin-bottom: 0.5rem;
   display: inline-block;
   font-size: 18px;
@@ -25,4 +25,8 @@ export const ViewResumeLink = styled.a`
     fill: white;
     margin-left: 8px;
   }
+`;
+
+export const Links = styled.ul`
+  text-align: right;
 `;

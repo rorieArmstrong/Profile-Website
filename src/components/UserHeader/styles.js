@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  min-height: 100vh;
+  min-height: 80vh;
   margin: auto;
   @media (max-width: 640px) {
     display: ${({ isHome }) => (!isHome ? 'none' : 'flex')};
@@ -34,3 +34,4 @@ export const Image = styled.img`
   width: auto;
   height: auto;
 `;
+
