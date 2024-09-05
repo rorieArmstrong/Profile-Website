@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Pill } from '../../styles';
 
-import { HeaderContainer, Header, Image } from './styles';
+import { HeaderContainer, Header, Image, ImageBlur, ImageBackground } from './styles';
 
 const UserHeader = ({ user }) => {
   const location = useLocation();
@@ -10,7 +10,10 @@ const UserHeader = ({ user }) => {
   return (
     <HeaderContainer isHome={location.pathname === '/'}>
       <Header>
-        <Image src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
+        <ImageBackground style={{"background-image":`user.basics.picture`}}>
+          <ImageBlur src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
+          <Image  src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
+        </ImageBackground>
         <div>
           <h2>{user.basics.name}</h2>
           <p>{user.basics.label}</p>
