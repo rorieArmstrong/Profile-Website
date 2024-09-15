@@ -11,7 +11,7 @@ const UserHeader = ({ user }) => {
   return (
     <HeaderContainer IsHome={isHome}>
       <Header>
-        <ImageBackground style={{"background-image":`user.basics.picture`}}>
+        <ImageBackground style={{"backgroundImage":`user.basics.picture`}}>
           <ImageBlur IsHome={isHome} src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
           <Image IsHome={isHome} src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
         </ImageBackground>
@@ -21,7 +21,7 @@ const UserHeader = ({ user }) => {
           <p>{user.basics.region}</p>
           <p>{user.basics.yearsOfExperience} years of experience as a developer</p>
           <p>{user.basics.headline}</p>
-          <div style={{"padding-top": "40px"}}>
+          <div style={{"paddingTop": "40px"}}>
           {user.skills.map(skill => (
             <Pill IsHome={isHome} key={skill.name}>{skill.name}</Pill>
           ))}

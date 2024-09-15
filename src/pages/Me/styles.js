@@ -78,8 +78,6 @@ export const ImageBlur = styled.img`
   position: absolute;
   z-index: -2;
   object-fit: cover;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
   marginRight: 72px;
   display: block;
   min-width: 200px;
