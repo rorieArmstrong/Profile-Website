@@ -9,7 +9,6 @@ export const HeaderContainer = styled.div`
   margin: auto;
   @media (max-width: 640px) {
     display: ${({ isHome }) => (!isHome ? 'none' : 'flex')};
-    
     flex-direction: column;
   }
 `;
@@ -38,7 +37,7 @@ export const Image = styled.img`
   min-hieght: 200px;
   margin-right: 1rem;
   border-radius: 50%;
-  max-width:400px;
+  max-width: 400px;
   max-height:400px;
   width: auto;
   height: auto;
@@ -46,7 +45,7 @@ export const Image = styled.img`
 
 export const ImageBlur = styled.img`
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   object-fit: cover;
   filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -62,3 +61,9 @@ export const ImageBlur = styled.img`
   height: auto;
 `;
 
+export const VerticalText = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+`

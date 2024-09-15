@@ -11,9 +11,10 @@ export const Paragraph = styled.p`
 `;
 
 export const Pill = styled.span`
-  display: inline-block;
-  margin-right: 0.75rem;
-  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   padding: 16px;
   background-color: ${blue[20]};
   color: ${blue[70]};
