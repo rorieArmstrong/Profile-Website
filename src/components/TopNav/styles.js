@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   z-index: 100;
   display: flex;
   align-items: center;
+  justify-content: right;
   height: 48px;
   background-color: #161616;
   border-bottom: 1px solid #393939;
