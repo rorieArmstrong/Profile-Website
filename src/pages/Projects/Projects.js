@@ -13,11 +13,11 @@ const Projects = ({ user }) => {
             <ProjectItem key={i}>
               <ProjectTitle>{project.name}</ProjectTitle>
               <p>{project.summary}</p>
-              <div style={{"display":"flex","alignItems":"flex-start","gap":"12px"}}>
+              <SkillContainer>
                 {[...project.languages, ...project.libraries].map((item, j) => (
                   <Pill key={j}>{item}</Pill>
                 ))}
-              </div>
+              </SkillContainer>
             </ProjectItem>
           ))}
         </ul>

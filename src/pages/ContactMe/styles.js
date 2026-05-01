@@ -1,44 +1,64 @@
 import styled from 'styled-components'
-import { white } from '@carbon/colors';
 
 export const TextInput = styled.input`
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  min-width: 100%
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 10px 12px;
+  background-color: #262626;
+  border: 1px solid #525252;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 150ms ease;
+  &:focus {
+    border-color: #0f62fe;
+  }
 `
+
 export const TextArea = styled.textarea`
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  min-width: 100%
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 10px 12px;
+  background-color: #262626;
+  border: 1px solid #525252;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+  transition: border-color 150ms ease;
+  &:focus {
+    border-color: #0f62fe;
+  }
 `
 
 export const Label = styled.label`
-  align-items: center;
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: #c6c6c6;
 `
 
 export const SubmitButton = styled.button`
-  width: 50%;
-  text-align: center;
-  margin: auto;
-  color: ${white};
-  max-width: 200px;
   display: flex;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
   align-items: center;
-  margin-top: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(46, 204, 64, 0.2);
   border: 2px solid #2ecc40;
-  background-color: rgba(46, 204, 64, 0.3);
-  transition: background-color 250ms ease;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 200ms ease;
   &:hover {
     background-color: #2ecc40;
   }
-  svg {
-    fill: white;
-    margin-left: 8px;
-  }
-`;
+`

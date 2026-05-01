@@ -61,15 +61,11 @@ export const ImageBackground = styled.div`
 
 export const Image = styled.img`
   object-fit: cover;
-  filter: blur(0px);
-  marginRight: 72px;
   display: block;
-  min-width: 200px;
-  min-hieght: 200px;
   margin-right: 1rem;
   border-radius: 50%;
   max-width: 400px;
-  max-height:400px;
+  max-height: 400px;
   width: auto;
   height: auto;
 `;
@@ -78,14 +74,13 @@ export const ImageBlur = styled.img`
   position: absolute;
   z-index: -2;
   object-fit: cover;
-  marginRight: 72px;
   display: block;
   min-width: 200px;
-  min-hieght: 200px;
+  min-height: 200px;
   margin-right: 1rem;
   border-radius: 50%;
-  max-width:400px;
-  max-height:400px;
+  max-width: 400px;
+  max-height: 400px;
   width: auto;
   height: auto;
 `;
