@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Layout from '../../components/Layout';
+import React from 'react';
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/loading.json';
 
@@ -12,15 +11,13 @@ const Loading = () => {
           preserveAspectRatio: "xMidYMid slice"
         }
       };
-    
+
     return (
-      <Layout user={user}>
-        <Lottie 
-          options={defaultOptions}
-          height={400}
-          width={400}
-        />
-      </Layout>
+      <Lottie
+        options={defaultOptions}
+        height={400}
+        width={400}
+      />
     );
 }
 

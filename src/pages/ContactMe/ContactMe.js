@@ -9,7 +9,9 @@ const ContactMe = ({ user }) => {
   const [message, onMessageChange] = useState('')
   
   const resetForm = () => {
-    this.setState({name: '', email: '', message: ''})
+    onNameChange('');
+    onEmailChange('');
+    onMessageChange('');
   }
   const handleSubmit = (event) => {
     event.preventDefault();
