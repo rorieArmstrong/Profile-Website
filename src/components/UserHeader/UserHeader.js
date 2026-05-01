@@ -33,7 +33,7 @@ const UserHeader = ({ user }) => {
     return (
       <div style={{ display: "flex", alignItems: "center", gap: "16px", padding: "16px 0" }}>
         <Image
-          src={user.basics.picture}
+          src={user.basics.image}
           alt="Profile-Picture"
           width="60"
           height="60"
@@ -52,8 +52,8 @@ const UserHeader = ({ user }) => {
       <HeaderContainer>
         <Header>
           <ImageBackground onMouseEnter={handleMouseEnter} onMouseLeave={e => handleMouseExit(e)} style={{"backgroundImage":`${user.basics.picture}`}}>
-            <ImageBlur src={user.basics.picture} style={{"WebkitFilter": `blur(${(8 + enter)}px)`}} alt="Profile-Picture" width="400" height="400"/>
-            <Image src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
+            <ImageBlur src={user.basics.image} style={{"WebkitFilter": `blur(${(8 + enter)}px)`}} alt="Profile-Picture" width="400" height="400"/>
+            <Image src={user.basics.image} alt="Profile-Picture" width="400" height="400"/>
           </ImageBackground>
           <VerticalText>
             <Lottie
@@ -63,9 +63,7 @@ const UserHeader = ({ user }) => {
               style={{"marginLeft":"0"}}
             />
             <div style={{"paddingBottom": "40px"}}>
-              <p>{user.basics.label}</p>
-              <p>{user.basics.region}</p>
-              <p>{user.basics.yearsOfExperience} years of experience as a developer</p>
+              <p>{user.basics.summary}</p>
             </div>
             <div style={{"display":"flex","alignItems":"flex-start","gap":"12px"}}>
             {user.skills.map(skill => (
