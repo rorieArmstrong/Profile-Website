@@ -5,6 +5,7 @@ import Projects from './Projects';
 import Work from './Work';
 import Education from './Education';
 import ContactMe from './ContactMe';
+// import Loading from './Loading';
 
 const Pages = ({ user }) => {
   return (

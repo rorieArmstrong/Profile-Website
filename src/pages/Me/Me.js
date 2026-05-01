@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/loading.json';
 import { Pill } from '../../styles';
 import { ProfileLink, Links, HeaderContainer, Header, Image, ImageBlur, ImageBackground, VerticalText  } from './styles';
 
 const Me = ({ user }) => {
   const [enter, setEnter] = useState(0);
+
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
 
   const handleMouseEnter = () => {
     setEnter(8);
@@ -24,7 +35,12 @@ const Me = ({ user }) => {
             <Image src={user.basics.picture} alt="Profile-Picture" width="400" height="400"/>
           </ImageBackground>
           <VerticalText>
-            <h2>{user.basics.name}</h2>
+            <Lottie 
+              options={defaultOptions}
+              height={76}
+              width={468}
+              style={{"marginLeft":"0"}}
+            />
             <div style={{"paddingBottom": "40px"}}>
               <p>{user.basics.label}</p>
               <p>{user.basics.region}</p>
