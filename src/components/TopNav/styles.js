@@ -9,12 +9,22 @@ export const Nav = styled.nav`
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 32px;
   height: 48px;
   background-color: #161616;
   border-bottom: 1px solid #393939;
   box-sizing: border-box;
+  padding: 0 32px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0 8px;
+    gap: 0;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -25,11 +35,18 @@ export const NavLink = styled(Link)`
   height: 100%;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
   border-bottom: 2px solid ${({ $active }) => ($active ? '#ffffff' : 'transparent')};
   transition: color 150ms ease, border-color 150ms ease;
 
   &:hover {
     color: #ffffff;
     background-color: #2a2a2a;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0 10px;
+    font-size: 13px;
   }
 `;

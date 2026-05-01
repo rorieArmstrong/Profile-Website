@@ -1,9 +1,10 @@
 import React from 'react';
 import Layout from '../../components/Layout';
+import AnimatedBackground from '../../components/AnimatedBackground/AnimatedBackground';
 
 const Me = ({ user }) => {
   return (
-    <Layout user={user} />
+    <div><AnimatedBackground /><Layout user={user} /></div>
   );
 };
 

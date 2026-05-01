@@ -49,7 +49,7 @@ const UserHeader = ({ user }) => {
 
   return (
     <div>
-      <HeaderContainer>
+      <HeaderContainer isHome={true}>
         <Header>
           <ImageBackground onMouseEnter={handleMouseEnter} onMouseLeave={e => handleMouseExit(e)} style={{"backgroundImage":`${user.basics.picture}`}}>
             <ImageBlur src={user.basics.image} style={{"WebkitFilter": `blur(${(8 + enter)}px)`}} alt="Profile-Picture" width="400" height="400"/>

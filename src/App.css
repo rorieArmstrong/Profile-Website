@@ -5,6 +5,15 @@
 --dark-colour:#2c698d;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .App {
   text-align: center;
 }
