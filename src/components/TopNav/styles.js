@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: right;
   height: 48px;
-  background-color: #16161600;
+  background-color: #161616;
   border-bottom: 1px solid #393939;
   box-sizing: border-box;
   padding: 0 32px;

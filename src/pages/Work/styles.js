@@ -1,5 +1,84 @@
 import styled from 'styled-components'
 
+export const PageLayout = styled.div`
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+`
+
+export const Timeline = styled.nav`
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  flex-shrink: 0;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+`
+
+export const TimelineEntry = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 1.25rem;
+`
+
+export const TimelineDot = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #525252;
+  border: 2px solid #393939;
+  flex-shrink: 0;
+`
+
+export const TimelineLine = styled.div`
+  position: absolute;
+  left: 3px;
+  top: 0.75rem;
+  width: 2px;
+  bottom: 0;
+  background-color: #393939;
+`
+
+export const TimelineLabel = styled.a`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.75rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #c6c6c6;
+    line-height: 1.3;
+    transition: color 150ms ease;
+  }
+
+  small {
+    font-size: 0.7rem;
+    color: #525252;
+    margin-top: 0.1rem;
+  }
+
+  &:hover span {
+    color: #ffffff;
+  }
+`
+
+export const Content = styled.div`
+  flex: 1;
+  min-width: 0;
+`
+
 export const WorkItem = styled.li`
   background-color: #262626;
   border: 1px solid #393939;
