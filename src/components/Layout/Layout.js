@@ -4,11 +4,11 @@ import UserHeader from '../UserHeader';
 
 import { StyledContent } from './styles';
 
-const Layout = ({ user, children }) => {
+const Layout = ({ user, children, transparent }) => {
   return (
     <>
       <TopNav />
-      <StyledContent>
+      <StyledContent transparent={transparent}>
         <UserHeader user={user} />
         <div>{children}</div>
       </StyledContent>

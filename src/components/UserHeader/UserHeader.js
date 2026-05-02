@@ -77,7 +77,7 @@ const UserHeader = ({ user }) => {
           {user.basics.profiles.slice(1).map((profile, i) => (
             <ProfileLink key={profile.network}>
               <a href={profile.url} target="_blank" rel="noreferrer noopener">
-                <img src={`/images/${profile.network}.png`} alt={profile.network}></img>
+                <img src={`/images/${profile.network}.png`} alt={profile.network} style={{"height":"2rem","width":"2rem"}}></img>
               </a>
             </ProfileLink>
           ))}

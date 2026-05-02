@@ -4,7 +4,10 @@ import AnimatedBackground from '../../components/AnimatedBackground/AnimatedBack
 
 const Me = ({ user }) => {
   return (
-    <div><AnimatedBackground /><Layout user={user} /></div>
+    <div>
+      <AnimatedBackground />
+      <Layout user={user} transparent />
+    </div>
   );
 };
 
