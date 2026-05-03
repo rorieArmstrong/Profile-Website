@@ -1,60 +1,96 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle } from '../../styles';
-import { TextInput, TextArea, Label, SubmitButton } from './styles';
+import {
+  FormContainer,
+  FormGroup,
+  FormFooter,
+  Label,
+  TextInput,
+  TextArea,
+  SubmitButton,
+  StatusMessage,
+} from './styles';
 
 const ContactMe = ({ user }) => {
-  const [name,  onNameChange] = useState('')
-  const [email, onEmailChange] = useState('')
-  const [message, onMessageChange] = useState('')
-  
-  const resetForm = () => {
-    onNameChange('');
-    onEmailChange('');
-    onMessageChange('');
-  }
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
+    setStatus(null);
 
     fetch((process.env.PORT || 'http://localhost:3002/') + 'send', {
-        method: "POST",
-        body: JSON.stringify({name: name, email: email, message: message}),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-      }).then(
-      (response) => (response.json())
-        ).then((response)=> {
-      if (response.status === 'success') {
-        alert("Message Sent.");
-        resetForm()
-      } else if(response.status === 'fail') {
-        alert("Message failed to send.")
-      }
+      method: 'POST',
+      body: JSON.stringify({ name, email, message }),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
     })
+      .then(res => res.json())
+      .then(res => {
+        if (res.status === 'success') {
+          setStatus('success');
+          setName('');
+          setEmail('');
+          setMessage('');
+        } else {
+          setStatus('error');
+        }
+      })
+      .catch(() => setStatus('error'))
+      .finally(() => setLoading(false));
   };
-
 
   return (
     <Layout user={user}>
-      <div >
+      <div>
         <SectionTitle>Contact Me</SectionTitle>
-        <form id="contact-form" onSubmit={event => handleSubmit(event)} method="POST" style={{width:'50%', minWidth: '250px'}}>
-          <div className="form-group">
+        <FormContainer id="contact-form" onSubmit={handleSubmit} method="POST">
+          <FormGroup>
             <Label htmlFor="name">Name</Label>
-            <TextInput type="text" className="form-control" id="name" value={name} onChange={event => onNameChange(event.target.value)} />
-          </div>
-          <div className="form-group">
-            <Label htmlFor="exampleInputEmail1">Email address</Label>
-            <TextInput type="email" className="form-control" id="email" aria-describedby="emailHelp" value={email} onChange={event => onEmailChange(event.target.value)} />
-          </div>
-          <div className="form-group">
+            <TextInput
+              type="text"
+              id="name"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="email">Email address</Label>
+            <TextInput
+              type="email"
+              id="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
             <Label htmlFor="message">Message</Label>
-            <TextArea className="form-control" rows="5" id="message" value={message} onChange={event => onMessageChange(event.target.value)} />
-          </div>
-          <SubmitButton type="submit" className="btn btn-primary"><span style={{margin: 'auto'}}>Submit</span></SubmitButton>
-        </form>
+            <TextArea
+              id="message"
+              rows="5"
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+            />
+          </FormGroup>
+          <FormFooter>
+            <SubmitButton type="submit" disabled={loading}>
+              {loading ? 'Sending…' : 'Submit'}
+            </SubmitButton>
+            {status === 'success' && (
+              <StatusMessage $success>Message sent successfully.</StatusMessage>
+            )}
+            {status === 'error' && (
+              <StatusMessage>Something went wrong — please try again.</StatusMessage>
+            )}
+          </FormFooter>
+        </FormContainer>
       </div>
     </Layout>
   );

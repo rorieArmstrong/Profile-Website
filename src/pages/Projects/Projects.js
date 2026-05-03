@@ -1,16 +1,16 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle, Pill } from '../../styles';
-import { ProjectItem, ProjectTitle, SkillContainer } from './styles';
+import { ProjectGrid, ProjectItem, ProjectTitle, SkillContainer } from './styles';
 
 const Projects = ({ user }) => {
   return (
     <Layout user={user}>
       <div>
         <SectionTitle>Projects</SectionTitle>
-        <ul>
+        <ProjectGrid>
           {user.projects.map((project, i) => (
-            <ProjectItem key={i}>
+            <ProjectItem key={i} href={project.url} target="_blank" rel="noopener noreferrer">
               <ProjectTitle>{project.name}</ProjectTitle>
               <p>{project.summary}</p>
               <SkillContainer>
@@ -20,7 +20,7 @@ const Projects = ({ user }) => {
               </SkillContainer>
             </ProjectItem>
           ))}
-        </ul>
+        </ProjectGrid>
       </div>
     </Layout>
   );
