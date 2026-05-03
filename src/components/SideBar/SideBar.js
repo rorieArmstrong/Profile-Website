@@ -5,8 +5,7 @@ import { StyledSideNav } from './styles';
 
 const items = [
   { name: 'About Me', path: '/' },
-  { name: 'Work', path: '/work' },
-  { name: 'Education', path: '/education' },
+  { name: 'Experience', path: '/experience' },
   { name: 'Projects', path: '/projects' },
   { name: 'Contatct Me', path: '/contactMe' },
 ];

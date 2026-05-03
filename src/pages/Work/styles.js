@@ -34,8 +34,8 @@ export const TimelineDot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #525252;
-  border: 2px solid #393939;
+  background-color: ${({ $type }) => $type === 'education' ? '#4a8fd4' : '#525252'};
+  border: 2px solid ${({ $type }) => $type === 'education' ? '#2d5f96' : '#393939'};
   flex-shrink: 0;
 `
 
@@ -77,6 +77,20 @@ export const TimelineLabel = styled.a`
 export const Content = styled.div`
   flex: 1;
   min-width: 0;
+`
+
+export const SubSectionTitle = styled.h3`
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #525252;
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
 `
 
 export const WorkItem = styled.li`
