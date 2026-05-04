@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle, Paragraph } from '../../styles';
 import {
@@ -16,6 +16,36 @@ import {
 } from './styles';
 
 const Experience = ({ user }) => {
+  const [activeId, setActiveId] = useState(null);
+
+  useEffect(() => {
+    const ids = [
+      ...user.work.map((_, i) => `work-${i}`),
+      ...user.education.map((_, i) => `education-${i}`),
+    ];
+
+    const intersecting = new Set();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) intersecting.add(entry.target.id);
+          else intersecting.delete(entry.target.id);
+        });
+        const topmost = ids.find(id => intersecting.has(id));
+        if (topmost) setActiveId(topmost);
+      },
+      { rootMargin: `-64px 0px -50% 0px`, threshold: 0 }
+    );
+
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [user.work, user.education]);
+
   const timelineEntries = [
     ...user.work.map((item, i) => ({
       type: 'work',
@@ -38,9 +68,9 @@ const Experience = ({ user }) => {
         <Timeline>
           {timelineEntries.map((entry, i) => (
             <TimelineEntry key={`${entry.type}-${entry.index}`}>
-              <TimelineDot $type={entry.type} />
+              <TimelineDot $type={entry.type} $active={activeId === `${entry.type}-${entry.index}`} />
               {i < timelineEntries.length - 1 && <TimelineLine />}
-              <TimelineLabel href={`#${entry.type}-${entry.index}`}>
+              <TimelineLabel href={`#${entry.type}-${entry.index}`} $active={activeId === `${entry.type}-${entry.index}`}>
                 <span>{entry.name ? entry.name : entry.institution}</span>
                 <small>{entry.year}</small>
               </TimelineLabel>

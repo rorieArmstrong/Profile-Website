@@ -34,9 +34,12 @@ export const TimelineDot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: ${({ $type }) => $type === 'education' ? '#4a8fd4' : '#525252'};
-  border: 2px solid ${({ $type }) => $type === 'education' ? '#2d5f96' : '#393939'};
+  background-color: ${({ $type, $active }) =>
+    $active ? '#ffffff' : $type === 'education' ? '#4a8fd4' : '#525252'};
+  border: 2px solid ${({ $type, $active }) =>
+    $active ? '#ffffff' : $type === 'education' ? '#2d5f96' : '#393939'};
   flex-shrink: 0;
+  transition: background-color 200ms ease, border-color 200ms ease;
 `
 
 export const TimelineLine = styled.div`
@@ -58,15 +61,16 @@ export const TimelineLabel = styled.a`
   span {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #c6c6c6;
+    color: ${({ $active }) => $active ? '#ffffff' : '#c6c6c6'};
     line-height: 1.3;
-    transition: color 150ms ease;
+    transition: color 200ms ease;
   }
 
   small {
     font-size: 0.7rem;
-    color: #525252;
+    color: ${({ $active }) => $active ? '#8a9ab0' : '#525252'};
     margin-top: 0.1rem;
+    transition: color 200ms ease;
   }
 
   &:hover span {
