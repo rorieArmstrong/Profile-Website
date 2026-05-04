@@ -13,14 +13,26 @@ export default function AnimatedBackground() {
     let animId;
 
     function resize() {
+      const prevW = canvas.width || window.innerWidth;
+      const prevH = canvas.height || window.innerHeight;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      mouse.x = (mouse.x / prevW) * canvas.width;
+      mouse.y = (mouse.y / prevH) * canvas.height;
+      current.x = (current.x / prevW) * canvas.width;
+      current.y = (current.y / prevH) * canvas.height;
     }
     resize();
 
     function onMouseMove(e) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+    }
+
+    function onTouchMove(e) {
+      const touch = e.touches[0];
+      mouse.x = touch.clientX;
+      mouse.y = touch.clientY;
     }
 
     function draw() {
@@ -49,11 +61,13 @@ export default function AnimatedBackground() {
 
     draw();
     window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
     window.addEventListener("resize", resize);
 
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("resize", resize);
     };
   }, []);

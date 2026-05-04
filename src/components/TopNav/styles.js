@@ -1,6 +1,29 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+export const NavList = styled.ol`
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  counter-reset: nav-counter;
+
+  li {
+    list-style: none;
+    counter-increment: nav-counter;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "0" counter(nav-counter) " ";
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      color: #5a6270;
+      margin-right: 4px;
+    }
+  }
+`;
+
 export const Nav = styled.nav`
   position: fixed;
   top: 0;
@@ -9,15 +32,15 @@ export const Nav = styled.nav`
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   height: 48px;
-  background-color: #161616;
-  border-bottom: 1px solid #393939;
   box-sizing: border-box;
-  padding: 0 32px;
+  padding: 0 24px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  background: ${({ $transparent }) => $transparent ? 'transparent' : '#111214'};
+  border-bottom: ${({ $transparent }) => $transparent ? 'none' : '1px solid rgba(255,255,255,0.06)'};
   &::-webkit-scrollbar {
     display: none;
   }
@@ -38,12 +61,11 @@ export const NavLink = styled(Link)`
   align-items: center;
   white-space: nowrap;
   flex-shrink: 0;
-  border-bottom: 2px solid ${({ $active }) => ($active ? '#ffffff' : 'transparent')};
-  transition: color 150ms ease, border-color 150ms ease;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
 
   &:hover {
     color: #ffffff;
-    background-color: #2a2a2a;
   }
 
   @media (max-width: 640px) {

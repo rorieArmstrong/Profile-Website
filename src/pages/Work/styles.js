@@ -8,7 +8,7 @@ export const PageLayout = styled.div`
 
 export const Timeline = styled.nav`
   position: sticky;
-  top: 2rem;
+  top: calc(48px + 2rem);
   display: flex;
   flex-direction: column;
   min-width: 140px;
@@ -94,6 +94,7 @@ export const SubSectionTitle = styled.h3`
 `
 
 export const WorkItem = styled.li`
+  scroll-margin-top: calc(48px + 1.5rem);
   background-color: #262626;
   border: 1px solid #393939;
   border-radius: 8px;

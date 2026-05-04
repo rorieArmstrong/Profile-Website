@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/loading.json';
 import { Pill } from '../../styles';
-import { ProfileLink, Links, HeaderContainer, Header, Image, ImageBlur, ImageBackground, VerticalText  } from './styles';
+import {Summary, Header, Label, ProfileLink, Links, HeaderContainer, Image, ImageBlur, ImageBackground, VerticalText  } from './styles';
 
 const UserHeader = ({ user }) => {
   const [enter, setEnter] = useState(0);
@@ -51,25 +51,31 @@ const UserHeader = ({ user }) => {
     <div>
       <HeaderContainer isHome={true}>
         <Header>
-          <ImageBackground onMouseEnter={handleMouseEnter} onMouseLeave={e => handleMouseExit(e)} style={{"backgroundImage":`${user.basics.picture}`}}>
+          {/* <ImageBackground onMouseEnter={handleMouseEnter} onMouseLeave={e => handleMouseExit(e)} style={{"backgroundImage":`${user.basics.picture}`}}>
             <ImageBlur src={user.basics.image} style={{"WebkitFilter": `blur(${(8 + enter)}px)`}} alt="Profile-Picture" width="400" height="400"/>
             <Image src={user.basics.image} alt="Profile-Picture" width="400" height="400"/>
-          </ImageBackground>
+          </ImageBackground> */}
           <VerticalText>
+            
+            <div style={{"paddingBottom": "8px"}}>
+              <Label>{user.basics.label}</Label>
+            </div>
             <Lottie
               options={defaultOptions}
               height={76}
               width={468}
-              style={{"marginLeft":"0"}}
             />
-            <div style={{"paddingBottom": "40px"}}>
-              <p>{user.basics.summary}</p>
+            {/* <div style={{"paddingBottom": "8px"}}>
+              <Header>{user.basics.name}</Header>
+            </div> */}
+            <div style={{"paddingBottom": "8px"}}>
+              <Summary>{user.basics.summary}</Summary>
             </div>
-            <div style={{"display":"flex","alignItems":"flex-start","gap":"12px"}}>
+            {/* <div style={{"display":"flex","alignItems":"flex-start","gap":"12px"}}>
             {user.skills.map(skill => (
               <Pill key={skill.name}>{skill.name}</Pill>
             ))}
-          </div>
+          </div> */}
           </VerticalText>
         </Header>
       </HeaderContainer>
