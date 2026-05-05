@@ -35,9 +35,9 @@ export const TimelineDot = styled.div`
   height: 8px;
   border-radius: 50%;
   background-color: ${({ $type, $active }) =>
-    $active ? '#ffffff' : $type === 'education' ? '#4a8fd4' : '#525252'};
+    $active ? '#4a8fd4' :  '#525252'};
   border: 2px solid ${({ $type, $active }) =>
-    $active ? '#ffffff' : $type === 'education' ? '#2d5f96' : '#393939'};
+    $active ? '#2d5f96' : '#393939'};
   flex-shrink: 0;
   transition: background-color 200ms ease, border-color 200ms ease;
 `
