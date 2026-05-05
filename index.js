@@ -6,7 +6,7 @@ var cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const creds =  { USER: process.env.USER, PASS: process.env.PASS }
+const creds =  { USER: process.env.EMAIL, PASS: process.env.PASS }
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
 
 var transport = {
@@ -36,9 +36,9 @@ router.post('/send', (req, res, next) => {
   var content = `Name: ${name} \n Email: ${email} \n Message: \n ${message} `
 
   var mail = {
-    from: name,
-    to: creds.USER,  // Change to email address that you want to receive messages on
-    subject: 'New Message from Contact Form',
+    from: creds.USER,
+    to: creds.USER,
+    subject: `New Message from ${name}`,
     text: content
   }
 
@@ -55,7 +55,7 @@ router.post('/send', (req, res, next) => {
      })
  
      transporter.sendMail({
-       from: "<your email address>",
+       from: creds.USER,
        to: email,
        subject: "Thank you for reaching out!",
        text: `Thank you for contacting me, I will be in touch!\n\nForm details\nName: ${name}\n Email: ${email}\n Message: ${message}`

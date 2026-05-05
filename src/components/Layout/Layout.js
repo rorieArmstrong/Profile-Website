@@ -1,16 +1,14 @@
 import React from 'react';
-import SideBar from '../SideBar';
+import TopNav from '../TopNav';
 import UserHeader from '../UserHeader';
-import MobileNav from '../MobileNav';
 
 import { StyledContent } from './styles';
 
-const Layout = ({ user, children }) => {
+const Layout = ({ user, children, transparent }) => {
   return (
     <>
-      <MobileNav />
-      <SideBar />
-      <StyledContent>
+      <TopNav />
+      <StyledContent transparent={transparent}>
         <UserHeader user={user} />
         <div>{children}</div>
       </StyledContent>

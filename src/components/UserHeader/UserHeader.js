@@ -1,39 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-
-import { HeaderContainer, Header, Image } from './styles';
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/loading.json';
+import { Pill } from '../../styles';
+import {Summary, Header, Label, ProfileLink, Links, HeaderContainer, Image, ImageBlur, ImageBackground, VerticalText  } from './styles';
 
 const UserHeader = ({ user }) => {
+  const [enter, setEnter] = useState(0);
   const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+
+  const handleMouseEnter = () => {
+    setEnter(8);
+  }
+
+  const handleMouseExit = () => {
+    setEnter(0);
+  }
+
+  if (!user) return null;
+
+  if (!isHome) {
+    return (
+      <div style={{ display: "flex", alignItems: "center", gap: "16px", padding: "16px 0" }}>
+        <Image
+          src={user.basics.image}
+          alt="Profile-Picture"
+          width="60"
+          height="60"
+          style={{ minWidth: "60px", maxWidth: "60px", maxHeight: "60px" }}
+        />
+        <div>
+          <p style={{ margin: 0, fontWeight: "bold" }}>{user.basics.name}</p>
+          <p style={{ margin: 0 }}>{user.basics.label}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <HeaderContainer isHome={location.pathname === '/'}>
-      <Header>
-        <Image src={user.basics.picture} alt="Profile-Picture" style={{width: "200px", hieght: "200px"}} />
-        <div>
-          <h2>{user.basics.name}</h2>
-          <h4>
-            <a
-              href={`https://github.com/${user.basics.username}`}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              @{user.basics.username}
-            </a>
-          </h4>
-          <p>{user.basics.label}</p>
-          <p>Coding in {user.basics.region}</p>
-          <p>{user.basics.yearsOfExperience} years of experience as a developer</p>
-          <p>{user.basics.headline}</p>
-          <p>
-            Blog:{' '}
-            <a href={user.basics.blog} target="_blank" rel="noreferrer noopener">
-              {user.basics.blog}
-            </a>
-          </p>
-        </div>
-      </Header>
-    </HeaderContainer>
+    <div>
+      <HeaderContainer isHome={true}>
+        <Header>
+          {/* <ImageBackground onMouseEnter={handleMouseEnter} onMouseLeave={e => handleMouseExit(e)} style={{"backgroundImage":`${user.basics.picture}`}}>
+            <ImageBlur src={user.basics.image} style={{"WebkitFilter": `blur(${(8 + enter)}px)`}} alt="Profile-Picture" width="400" height="400"/>
+            <Image src={user.basics.image} alt="Profile-Picture" width="400" height="400"/>
+          </ImageBackground> */}
+          <VerticalText>
+            
+            <div style={{"paddingBottom": "8px"}}>
+              <Label>{user.basics.label}</Label>
+            </div>
+            <Lottie
+              options={defaultOptions}
+              height={76}
+              width={468}
+            />
+            {/* <div style={{"paddingBottom": "8px"}}>
+              <Header>{user.basics.name}</Header>
+            </div> */}
+            <div style={{"paddingBottom": "8px"}}>
+              <Summary>{user.basics.summary}</Summary>
+            </div>
+            {/* <div style={{"display":"flex","alignItems":"flex-start","gap":"12px"}}>
+            {user.skills.map(skill => (
+              <Pill key={skill.name}>{skill.name}</Pill>
+            ))}
+          </div> */}
+          </VerticalText>
+        </Header>
+      </HeaderContainer>
+      <Links>
+          {user.basics.profiles.slice(1).map((profile, i) => (
+            <ProfileLink key={profile.network}>
+              <a href={profile.url} target="_blank" rel="noreferrer noopener">
+                <img src={`/images/${profile.network}.png`} alt={profile.network} style={{"height":"2rem","width":"2rem"}}></img>
+              </a>
+            </ProfileLink>
+          ))}
+      </Links>
+    </div>
   );
 };
 
