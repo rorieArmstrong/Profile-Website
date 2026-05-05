@@ -9,12 +9,27 @@ export const Nav = styled.nav`
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 48px;
   box-sizing: border-box;
   padding: 0 24px;
   background: ${({ $transparent }) => $transparent ? 'transparent' : '#111214'};
   border-bottom: ${({ $transparent }) => $transparent ? 'none' : '1px solid rgba(255,255,255,0.06)'};
+`;
+
+export const Logo = styled(Link)`
+  color: #A0D8FF;
+  text-decoration: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  transition: opacity 150ms ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const NavList = styled.ol`

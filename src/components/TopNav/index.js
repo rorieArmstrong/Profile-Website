@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Nav, NavList, NavLink, Hamburger, MobileMenu, MobileNavLink } from './styles';
+import { Nav, Logo, NavList, NavLink, Hamburger, MobileMenu, MobileNavLink } from './styles';
 
 const items = [
-  { name: 'About Me', path: '/' },
   { name: 'Experience', path: '/experience' },
   { name: 'Projects', path: '/projects' },
   { name: 'Contact Me', path: '/contactMe' },
@@ -20,6 +19,7 @@ const TopNav = () => {
 
   return (
     <Nav $transparent={isMe && !open}>
+      <Logo to="/">R.</Logo>
       <NavList>
         {items.map((item, i) => (
           <li key={item.path}>
