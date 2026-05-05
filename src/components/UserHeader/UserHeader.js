@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/loading.json';
-import { Pill } from '../../styles';
-import {Summary, Header, Label, ProfileLink, Links, HeaderContainer, Image, ImageBlur, ImageBackground, VerticalText  } from './styles';
+import {Summary, Header, Label, ProfileLink, Links, HeaderContainer, Image, VerticalText} from './styles';
 
 const UserHeader = ({ user }) => {
-  const [enter, setEnter] = useState(0);
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -18,14 +16,6 @@ const UserHeader = ({ user }) => {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
-
-  const handleMouseEnter = () => {
-    setEnter(8);
-  }
-
-  const handleMouseExit = () => {
-    setEnter(0);
-  }
 
   if (!user) return null;
 
@@ -51,10 +41,6 @@ const UserHeader = ({ user }) => {
     <div>
       <HeaderContainer isHome={true}>
         <Header>
-          {/* <ImageBackground onMouseEnter={handleMouseEnter} onMouseLeave={e => handleMouseExit(e)} style={{"backgroundImage":`${user.basics.picture}`}}>
-            <ImageBlur src={user.basics.image} style={{"WebkitFilter": `blur(${(8 + enter)}px)`}} alt="Profile-Picture" width="400" height="400"/>
-            <Image src={user.basics.image} alt="Profile-Picture" width="400" height="400"/>
-          </ImageBackground> */}
           <VerticalText>
             
             <div style={{"paddingBottom": "8px"}}>
