@@ -4,14 +4,21 @@ import Pages from './pages/index'
 
 function App() {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     fetch('https://gitconnected.com/v1/portfolio/roriearmstrong')
-      .then(res => res.json())
-      .then(user => {
-        setUser(user);
-      });
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to load profile');
+        return res.json();
+      })
+      .then(user => setUser(user))
+      .catch(() => setError(true));
   }, []);
-  return !user? <div/>: <Pages user={user} />;
+
+  if (error) return <div style={{ padding: '2rem' }}>Failed to load profile. Please try again later.</div>;
+  if (!user) return <div />;
+  return <Pages user={user} />;
 }
 
 export default App;
