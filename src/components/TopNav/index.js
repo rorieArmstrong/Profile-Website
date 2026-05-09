@@ -19,7 +19,7 @@ const TopNav = () => {
 
   return (
     <Nav $transparent={isMe && !open}>
-      <Logo to="/">R.</Logo>
+      <Logo to="/">.R</Logo>
       <NavList>
         {items.map((item, i) => (
           <li key={item.path}>
