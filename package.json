@@ -42,6 +42,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^react-lottie$": "<rootDir>/__mocks__/react-lottie.js"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

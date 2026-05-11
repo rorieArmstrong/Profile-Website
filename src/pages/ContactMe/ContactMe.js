@@ -12,19 +12,29 @@ import {
   StatusMessage,
 } from './styles';
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3002/';
+
 const ContactMe = ({ user }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [validationError, setValidationError] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setValidationError(null);
+
+    if (!name.trim()) return setValidationError('Please enter your name.');
+    if (!EMAIL_RE.test(email)) return setValidationError('Please enter a valid email address.');
+    if (!message.trim()) return setValidationError('Please enter a message.');
+
     setLoading(true);
     setStatus(null);
 
-    fetch((process.env.PORT || 'http://localhost:3002/') + 'send', {
+    fetch(API_URL + 'send', {
       method: 'POST',
       body: JSON.stringify({ name, email, message }),
       headers: {
@@ -83,6 +93,7 @@ const ContactMe = ({ user }) => {
             <SubmitButton type="submit" disabled={loading}>
               {loading ? 'Sending…' : 'Submit'}
             </SubmitButton>
+            {validationError && <StatusMessage>{validationError}</StatusMessage>}
             {status === 'success' && (
               <StatusMessage $success>Message sent successfully.</StatusMessage>
             )}

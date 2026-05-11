@@ -1,8 +1,21 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+beforeEach(() => {
+  global.fetch = jest.fn(() => new Promise(() => {}));
+});
+
+afterEach(() => {
+  jest.resetAllMocks();
+});
+
+test('renders without crashing', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+});
+
+test('calls the GitConnected API on mount', () => {
+  render(<App />);
+  expect(fetch).toHaveBeenCalledWith(
+    'https://gitconnected.com/v1/portfolio/roriearmstrong'
+  );
 });
